@@ -56,3 +56,45 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
     .about { flex-direction: column; }
     nav, .header-cta { display: none; } /* Add mobile menu logic here later */
 }
+
+/* Barn CTA Section */
+.barn-cta {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/barn-bg.jpg');
+    background-attachment: fixed; /* This creates the parallax effect */
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+}
+
+.barn-cta h2 { font-size: 48px; margin-bottom: 20px; }
+.barn-cta p { font-size: 20px; margin-bottom: 30px; }
+
+/* Areas Served Grid */
+.areas-served { padding: 80px 0; background: #fff; }
+.areas-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
+
+.map-container { margin: 20px 0; border: 5px solid #f4f4f4; }
+.serving-list { margin-bottom: 20px; }
+.serving-list ul { list-style: none; padding: 0; }
+.serving-list li { padding: 5px 0; border-bottom: 1px solid #eee; }
+
+/* Hours List */
+.hours-list { list-style: none; padding: 0; margin-bottom: 30px; }
+.hours-list li { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 10px 0; 
+    border-bottom: 1px solid #eee; 
+    font-size: 16px;
+}
+.hours-list li span:first-child { font-weight: bold; text-transform: capitalize; }
+
+/* Payments */
+.payment-methods { background: #f9f9f9; padding: 20px; border-left: 4px solid var(--brand-red); }
+.payment-icons { font-size: 30px; margin-top: 15px; display: flex; gap: 15px; color: #555; }
+
+/* Footer */
+footer { background: #222; color: #888; padding: 40px 0; font-size: 14px; }
+.text-center { text-align: center; }
