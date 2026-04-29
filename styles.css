@@ -98,3 +98,14 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 /* Footer */
 footer { background: #222; color: #888; padding: 40px 0; font-size: 14px; }
 .text-center { text-align: center; }
+
+.hero {
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4)), url('assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 160px 0; /* Extra bottom padding for the cut */
+    color: var(--white);
+    /* This creates the diagonal bottom edge */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    margin-bottom: -60px; /* Pulls the next section up into the gap */
+}
