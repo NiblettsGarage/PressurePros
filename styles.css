@@ -128,7 +128,7 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 /* --- 6. BARN CTA SECTION (Reintegrated Parallax & Slant) --- */
 .barn-cta {
     position: relative;
-    margin-top: -80px; 
+    margin-top: -40px; 
     padding: 220px 0;
     color: white;
     z-index: 4;
@@ -224,6 +224,11 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
     font-size: 14px;
     margin-bottom: 10px;
     letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--brand-red) !important;
 }
 
 .footer-contact h3 { color: var(--brand-red); margin-bottom: 15px; border-bottom: 4px solid var(--brand-red); display: inline-block; font-size: 18px; }
