@@ -38,10 +38,29 @@ nav a { text-decoration: none; color: var(--text-dark); margin: 0 10px; font-wei
 .btn-outline { border: 2px solid var(--brand-red); color: var(--white); padding: 15px 30px; text-decoration: none; font-family: 'Anton'; }
 
 /* Hero: Straight top, Slanted bottom left */
+/* Hero Section - The Container stays rectangular to protect the form */
 .hero { 
-    padding: 160px 0 180px 0; /* More padding to account for the slant */
-    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-    z-index: 1;
+    position: relative;
+    padding: 180px 0 200px 0; 
+    color: var(--white);
+    background: none; /* Remove background from here */
+    overflow: visible; 
+    z-index: 10; /* Ensure this stays ABOVE the next section */
+}
+
+/* The Background - This handles the image and the slant */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4)), url('assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    z-index: -1; /* Puts it behind the text and form */
 }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .hero-text h1 { font-size: 60px; line-height: 1.1; margin-bottom: 20px; }
@@ -53,14 +72,15 @@ nav a { text-decoration: none; color: var(--text-dark); margin: 0 10px; font-wei
 input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px solid #ccc; font-family: 'Inter'; }
 .hero-form-box button { background: none; border: none; font-family: 'Anton'; font-size: 24px; color: var(--brand-red); cursor: pointer; float: right; margin-top: 10px; }
 
-/* About Section */
-/* About: Slanted top (to match Hero) and Slanted bottom right */
+/* About Section - Fix the overlap */
 .about { 
-    margin-top: -80px; /* Pull it up into the Hero's cut */
+    position: relative;
+    margin-top: -100px; /* Pull it up under the slant */
     padding: 140px 0 100px 0;
     background: var(--white);
-    clip-path: polygon(0 6%, 100% 0, 100% 94%, 0% 100%);
-    z-index: 2;
+    /* Slant the top and bottom */
+    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0% 100%);
+    z-index: 1; /* Stays below the Hero so the form is clickable */
 }
 .about-image { flex: 1; position: relative; }
 .about-image::before { content: ""; position: absolute; top: -20px; left: -20px; width: 100%; height: 100%; background: var(--brand-red); z-index: -1; }
