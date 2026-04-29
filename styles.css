@@ -109,3 +109,60 @@ footer { background: #222; color: #888; padding: 40px 0; font-size: 14px; }
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     margin-bottom: -60px; /* Pulls the next section up into the gap */
 }
+
+.about-image {
+    position: relative;
+    z-index: 1;
+}
+
+/* The red abstract shape behind the image */
+.about-image::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    background: var(--brand-red);
+    z-index: -1;
+    /* Slant the red box slightly */
+    transform: skew(-3deg);
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+}
+
+.barn-cta {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/barn-bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 150px 0;
+    color: white;
+    text-align: center;
+    /* This angles the TOP of the section to match the Hero */
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    margin-top: -50px;
+}
+
+.areas-served {
+    position: relative;
+    overflow: hidden; /* Keeps the shapes from causing a horizontal scroll */
+}
+
+/* Decorative red triangle in the background */
+.areas-served::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: var(--brand-red);
+    opacity: 0.03; /* Make it barely visible */
+    transform: rotate(45deg);
+    z-index: 0;
+}
