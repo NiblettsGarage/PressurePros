@@ -75,11 +75,12 @@ nav a {
 /* --- 4. HERO SECTION (Protected Content + Slanted BG) --- */
 .hero { 
     position: relative;
-    padding: 200px 0 250px 0; /* Padding allows the slant to show without hitting text */
+padding: 220px 0 280px 0; /* Increased bottom padding */
     color: #fff;
     z-index: 10; /* Keeps form on top */
 }
 
+/* Hero Background */
 .hero::before {
     content: "";
     position: absolute;
@@ -88,7 +89,7 @@ nav a {
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-    z-index: -1; /* Puts background behind the content */
+    z-index: -1;
 }
 
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
@@ -104,7 +105,7 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 /* --- 5. ABOUT SECTION --- */
 .about { 
     position: relative;
-    margin-top: -120px; /* Pulls it up under the Hero slant */
+margin-top: -80px; /* Reduced negative margin (was -120) */
     padding: 160px 0 140px 0;
     background: var(--white);
     clip-path: polygon(0 8%, 100% 0, 100% 92%, 0% 100%);
@@ -127,18 +128,19 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 /* --- 6. BARN CTA SECTION (Parallax + Slant) --- */
 .barn-cta {
     position: relative;
-    margin-top: -100px;
+margin-top: -60px; /* Reduced negative margin (was -100) */
     padding: 200px 0;
     color: white;
     z-index: 4;
 }
 
+/* Barn Background */
 .barn-cta::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/barn-bg.jpg');
-    background-attachment: fixed;
+    background-attachment: fixed; /* Keep this for the parallax feel */
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
