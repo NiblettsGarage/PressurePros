@@ -30,7 +30,32 @@ header {
 .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 .logo { height: 70px; }
 nav a { text-decoration: none; color: var(--text-dark); margin: 0 10px; font-weight: 700; font-size: 14px; }
-.header-cta { display: flex; align-items: center; gap: 20px; }
+/* Header Phone Button - Matching the Hero Style */
+.header-cta .phone-link {
+    background: var(--brand-red);
+    color: var(--white) !important; /* Force white in case of global link overrides */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for better UX */
+.header-cta .phone-link:hover {
+    background: var(--dark-red);
+}
+
+/* Ensure the header container aligns everything properly */
+.header-cta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
 /* Buttons */
 .btn-primary { background: var(--brand-red); color: var(--white); padding: 12px 24px; text-decoration: none; border-radius: 0; }
