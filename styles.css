@@ -68,27 +68,28 @@ nav a {
 .header-cta { display: flex; align-items: center; gap: 15px; }
 
 /* --- 3. BUTTONS --- */
-.btn-primary { background: var(--brand-red); color: var(--white); padding: 12px 24px; text-decoration: none; display: inline-block; }
-.btn-secondary { background: var(--brand-red); color: var(--white); padding: 15px 30px; text-decoration: none; font-family: 'Anton'; display: inline-block; }
-.btn-outline { border: 2px solid var(--brand-red); color: var(--white); padding: 15px 30px; text-decoration: none; font-family: 'Anton'; display: inline-block; }
+.btn-primary { background: var(--brand-red); color: var(--white); padding: 12px 24px; text-decoration: none; display: inline-block; font-family: 'Anton', sans-serif; text-transform: uppercase;}
+.btn-secondary { background: var(--brand-red); color: var(--white); padding: 15px 30px; text-decoration: none; font-family: 'Anton', sans-serif; text-transform: uppercase; display: inline-block; }
+.btn-outline { border: 2px solid var(--brand-red); color: var(--white); padding: 15px 30px; text-decoration: none; font-family: 'Anton', sans-serif; text-transform: uppercase; display: inline-block; }
 
-/* --- 4. HERO SECTION (Protected Content + Slanted BG) --- */
+/* --- 4. HERO SECTION (Parallax protected House Content + Slanted BG) --- */
 .hero { 
     position: relative;
-    padding: 240px 0 300px 0; /* More space at bottom for the slant */
-    z-index: 10;
+    padding: 240px 0 320px 0; /* Padding allows the slant to show without hitting text */
+    color: #fff;
+    z-index: 10; /* Keeps form on top */
 }
 
-/* Hero Background */
 .hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('assets/images/hero-bg.jpg');
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4)), url('assets/images/hero-bg.jpg');
+    background-attachment: fixed; /* Parallax effect */
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
-    z-index: -1;
+    z-index: -1; /* Puts background behind the content */
 }
 
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
@@ -101,11 +102,11 @@ nav a {
 input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px solid #ccc; font-family: 'Inter'; }
 .hero-form-box button { background: none; border: none; font-family: 'Anton'; font-size: 24px; color: var(--brand-red); cursor: pointer; float: right; margin-top: 10px; }
 
-/* --- 5. ABOUT SECTION --- */
+/* --- 5. ABOUT SECTION (Reintegrated & Slanted) --- */
 .about { 
     position: relative;
-margin-top: -80px; /* Reduced negative margin (was -120) */
-    padding: 160px 0 140px 0;
+    margin-top: -100px; /* Pulls it up under the Hero slant */
+    padding: 200px 0 160px 0;
     background: var(--white);
     clip-path: polygon(0 8%, 100% 0, 100% 92%, 0% 100%);
     z-index: 5;
@@ -124,20 +125,21 @@ margin-top: -80px; /* Reduced negative margin (was -120) */
 .about-content { flex: 1; }
 .about-content h2 { color: var(--brand-red); font-size: 40px; margin-bottom: 20px; }
 
-/* --- 6. BARN CTA SECTION (Parallax + Slant) --- */
+/* --- 6. BARN CTA SECTION (Reintegrated Parallax & Slant) --- */
 .barn-cta {
     position: relative;
     margin-top: -80px; 
     padding: 220px 0;
+    color: white;
     z-index: 4;
 }
-/* Barn Background */
+
 .barn-cta::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/barn-bg.jpg');
-    background-attachment: fixed; /* Keep this for the parallax feel */
+    background-attachment: fixed; /* Parallax effect */
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
@@ -147,7 +149,7 @@ margin-top: -80px; /* Reduced negative margin (was -120) */
 .barn-cta h2 { font-size: 48px; margin-bottom: 20px; }
 .barn-cta p { font-size: 20px; margin-bottom: 30px; }
 
-/* --- 7. AREAS SERVED --- */
+/* --- 7. AREAS SERVED (Restored Info Section) --- */
 .areas-served {
     position: relative;
     margin-top: -60px;
@@ -172,30 +174,27 @@ margin-top: -80px; /* Reduced negative margin (was -120) */
 
 .areas-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
 .map-container { margin: 20px 0; border: 5px solid #f4f4f4; }
+.map-info h3, .hours-info h3 { color: var(--brand-red); margin-bottom: 15px; border-bottom: 4px solid var(--brand-red); display: inline-block; }
+.map-info i, .contact-details i { color: var(--brand-red); margin-right: 10px; }
+.serving-list { margin-bottom: 20px; }
 .serving-list li { padding: 8px 0; border-bottom: 1px solid #eee; list-style: none; }
+.contact-details p { margin-bottom: 10px; }
 
 /* Hours & Payments */
 .hours-list { list-style: none; padding: 0; margin-bottom: 30px; }
-.hours-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+.hours-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 16px; }
 .hours-list li span:first-child { font-weight: bold; }
 
 .payment-methods { background: #f9f9f9; padding: 20px; border-left: 4px solid var(--brand-red); }
 .payment-icons { font-size: 30px; margin-top: 15px; display: flex; gap: 15px; color: #555; }
 
-/* --- 8. FOOTER --- */
-footer { background: #222; color: #888; padding: 40px 0; font-size: 14px; z-index: 2; position: relative; }
-
-/* --- 9. RESPONSIVE --- */
-@media (max-width: 960px) {
-    .hero-grid, .about, .areas-grid { grid-template-columns: 1fr; }
-    .hero-text h1 { font-size: 40px; }
-    nav, .header-cta { display: none; }
-}
-
+/* --- 8. FOOTER (New structure, Generic LLC name) --- */
 .main-footer {
     background: #1a1a1a;
     color: #fff;
-    padding: 60px 0 20px 0;
+    padding: 60px 0 40px 0;
+    z-index: 2;
+    position: relative;
 }
 
 .footer-grid {
@@ -203,17 +202,15 @@ footer { background: #222; color: #888; padding: 40px 0; font-size: 14px; z-inde
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
     align-items: start;
-    border-bottom: 1px solid #333;
-    padding-bottom: 40px;
 }
 
-.footer-logo { height: 60px; margin-bottom: 20px; }
+.footer-brand .footer-logo { height: 60px; margin-bottom: 20px; }
 
 .social-icons a {
     color: #fff;
     font-size: 24px;
-    margin-right: 15px;
-    transition: color 0.3s;
+    margin: 0 15px;
+    transition: color 0.3s ease;
 }
 
 .social-icons a:hover { color: var(--brand-red); }
@@ -223,15 +220,20 @@ footer { background: #222; color: #888; padding: 40px 0; font-size: 14px; z-inde
     color: #fff;
     text-decoration: none;
     font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
-.footer-contact p { margin-bottom: 10px; }
+.footer-contact h3 { color: var(--brand-red); margin-bottom: 15px; border-bottom: 4px solid var(--brand-red); display: inline-block; font-size: 18px; }
+.footer-contact p { margin-bottom: 10px; font-size: 14px; }
 .footer-contact i { color: var(--brand-red); margin-right: 10px; }
 
-.footer-bottom {
-    padding-top: 20px;
-    font-size: 13px;
-    color: #777;
+/* --- 9. RESPONSIVE --- */
+@media (max-width: 960px) {
+    .hero-grid, .about, .areas-grid { grid-template-columns: 1fr; }
+    .about { flex-direction: column; }
+    .hero-text h1 { font-size: 40px; }
+    nav, .header-cta { display: none; } /* Add mobile menu logic here later */
 }
