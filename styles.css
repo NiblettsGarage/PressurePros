@@ -351,3 +351,55 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 @media (max-width: 650px) {
     .review-card { width: 100%; }
 }
+
+/* --- MOBILE HEADER LOGIC --- */
+
+/* Hide mobile-only elements on desktop */
+.mobile-nav-toggle, .mobile-only-phone { display: none; }
+
+@media (max-width: 960px) {
+    header { height: 80px; }
+    .logo { height: 50px; }
+
+    /* Show the Hamburger Button */
+    .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: var(--brand-red);
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    /* Hide the desktop nav and CTA */
+    nav, .header-cta { display: none; }
+
+    /* The Slide-Out Mobile Menu */
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0; right: 0;
+        width: 280px;
+        height: 100vh;
+        background: var(--white);
+        padding: 100px 40px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1500;
+    }
+
+    .nav-menu.active a {
+        font-size: 20px;
+        margin: 15px 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    .mobile-only-phone {
+        display: block !important;
+        color: var(--brand-red) !important;
+        font-family: 'Anton', sans-serif;
+        margin-top: 20px !important;
+    }
+}
