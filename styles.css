@@ -117,22 +117,91 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
     margin-bottom: 20px;
 }
 
-/* Centering the last two cards in a 3-column grid */
+/* Services Page Specifics */
+.services-hero {
+    padding: 160px 0 180px 0;
+}
+
+/* Services Hero - Using image_e3713c.jpg */
+.services-hero::before {
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4)), url('assets/images/services-hero-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
+    z-index: -1;
+}
+
+/* Center bottom row in 3-column grid */
+.service-card.centered-card:nth-child(13) {
+    grid-column: 1 / 2;
+    margin-left: 50%;
+}
+.service-card.centered-card:nth-child(14) {
+    grid-column: 2 / 3;
+    margin-left: 50%;
+}
+
+@media (max-width: 960px) {
+    .service-card.centered-card { grid-column: auto; margin-left: 0; }
+}
+
+.services-main {
+    padding: 80px 0;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* Logic to center the 13th and 14th items */
-.service-card:nth-child(13) {
-    grid-column: 1 / 2;
-    margin-left: 50%; /* Shifts the start of the final row toward center */
+.service-card {
+    background: #f9f9f9;
+    padding: 40px;
+    border-bottom: 5px solid #eee;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-.service-card:nth-child(14) {
-    grid-column: 2 / 3;
-    margin-left: 50%;
+.service-card:hover {
+    background: var(--white);
+    border-bottom: 5px solid var(--brand-red);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: var(--brand-red);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: var(--text-dark);
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Mobile Horizontal Scroll Hack */
+@media (max-width: 768px) {
+    .services-grid {
+        display: flex;
+        overflow-x: auto; /* Side-scrolling menu on mobile */
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+    
+    .service-card {
+        min-width: 85%; /* Shows most of one card and a peak of the next */
+        scroll-snap-align: center;
+    }
 }
 
 @media (max-width: 960px) {
