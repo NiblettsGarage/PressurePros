@@ -106,58 +106,41 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 .footer-contact h3 { color: var(--brand-red); margin-bottom: 15px; border-bottom: 4px solid var(--brand-red); display: inline-block; }
 .footer-contact i { color: var(--brand-red); margin-right: 10px; }
 
-/* Services Page Specifics */
-.services-hero {
-    padding: 160px 0 180px 0;
+/* Page Header Template Fix */
+.page-header {
+    padding: 180px 0 200px 0; /* More room above the header */
+    text-align: center;
 }
 
-.services-hero::before {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/barn-bg.jpg'); /* Reuse barn image for consistency */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+.page-header h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
 }
 
-.services-main {
-    padding: 80px 0;
-}
-
+/* Centering the last two cards in a 3-column grid */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-.service-card {
-    background: #f9f9f9;
-    padding: 40px;
-    border-bottom: 5px solid #eee;
-    transition: all 0.3s ease;
-    text-align: center;
+/* Logic to center the 13th and 14th items */
+.service-card:nth-child(13) {
+    grid-column: 1 / 2;
+    margin-left: 50%; /* Shifts the start of the final row toward center */
 }
 
-.service-card:hover {
-    background: var(--white);
-    border-bottom: 5px solid var(--brand-red);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transform: translateY(-5px);
+.service-card:nth-child(14) {
+    grid-column: 2 / 3;
+    margin-left: 50%;
 }
 
-.service-card i {
-    font-size: 40px;
-    color: var(--brand-red);
-    margin-bottom: 20px;
-}
-
-.service-card h3 {
-    margin-bottom: 15px;
-    font-size: 20px;
-    color: var(--text-dark);
-}
-
-.service-card p {
-    font-size: 14px;
-    color: #666;
+@media (max-width: 960px) {
+    .service-card:nth-child(13), 
+    .service-card:nth-child(14) {
+        grid-column: auto;
+        margin-left: 0;
+    }
 }
 
 /* Mobile Horizontal Scroll Hack */
