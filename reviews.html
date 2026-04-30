@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - Pressure Pros Pressure Washing LLC</title>
+    <link rel="icon" type="image/webp" href="assets/images/logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <img src="assets/images/logo.webp" alt="Pressure Pros Logo" class="logo">
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="services.html">SERVICES</a>
+                <a href="about.html">ABOUT</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="reviews.html">REVIEWS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-cta">
+                <a href="tel:7159445820" class="phone-link"><i class="fas fa-phone"></i> (715) 944-5820</a>
+                <a href="contact.html" class="btn-primary">CONTACT US <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero reviews-hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1>CUSTOMER<br>REVIEWS</h1>
+                    <p>Hear From Our Satisfied Clients.</p>
+                    <div class="hero-btns">
+                        <a href="tel:7159445820" class="btn-secondary"><i class="fas fa-phone"></i> (715) 944-5820</a>
+                        <a href="https://www.google.com/maps/place/Pressure+Pros+Pressure+Washing+LLC/@45.0968129,-92.4992429,284363m/data=!3m2!1e3!4b1!4m6!3m5!1s0x29af692a9e83ab23:0x71c2d2884299e2b5!8m2!3d45.09774!4d-91.8399439!16s%2Fg%2F11w9zt2j6s?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D" class="btn-outline">WRITE A REVIEW</a>
+                    </div>
+                </div>
+                <div class="hero-form-box">
+                    <h3>CONTACT US</h3>
+                    <form id="contact-form" action="https://formspree.io/f/xnjwqjve" method="POST">
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" name="phone" placeholder="Phone">
+                            <input type="text" name="subject" placeholder="Subject">
+                        </div>
+                        <textarea name="message" placeholder="Any additional info..." rows="4" style="resize: none;" required></textarea>
+                        <button type="submit">SUBMIT <i class="fas fa-chevron-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section container">
+            <h2 class="text-center" style="margin-bottom: 50px; font-size: 40px; color: var(--brand-red);">OUR REVIEWS</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <h3>Steven Karpinski</h3>
+                    <p class="review-text" id="steven-text">
+                        Good contractors are hard to come by, however I found one and want to share my experience. After requesting referrals from my local online neighborhood forum, I received three that seemed like good choices...
+                        <span id="more-content" style="display: none;">
+                            Unfortunately, one was a no show after making appointment, another failed to provide a verbal or formal quote, and the last never called back. I did my own search and found “Pressure Washing Pros” and read the reviews just like you are probably doing right now. Amazingly, when I called the phone number it was answered by a live professional person named Steve who was ready to listen and evaluate the exterior washing needs for my home. He googled our address and was able to provide a quote over the phone without wasting any additional time. His quote for exterior home washing was impressive and I am as frugal as they come. For context we have James Hardie board siding and wood trimmed windows. Although I had already done my homework and knew what needed to be performed, without any prompting Steve detailed exactly what I was looking for and broke down pricing for exterior home low pressure washing, and their triple filtered water window cleaning process. (per window) I scheduled a date to perform the work and received a confirmation shortly after hanging up the phone. Another confirmation came the day before work was to begin. My scheduled arrival window was between 10:30-11:30am. Steve and Pablo showed up at 10:40 with professional equipment and did test spots to ensure no damage or staining would occur. Steve and myself did a pre-job review and he answered all my questions with patience and professionalism. Needless to say they did an amazing job and finished by 3pm. Windows were sparkling, and all surface mildew was gone after not being cleaned for over 5 years. Im happy to report there was no damage or concerns when they were finished. If you want peace of mind while saving time, do yourself a favor and hire Pressure Washing Pros. I know I will be using them again in another 2 or 3 years as per Steve’s suggestion.
+                        </span>
+                    </p>
+                    <button onclick="toggleReview()" id="read-more-btn" class="read-more">Read More</button>
+                    <span class="review-date">9/6/2024</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <h3>Cheryl Czachorowski</h3>
+                    <p>"Steve and crew is quick, professional and the level of detail on getting the job done perfectly is nothing like I have seen before. Highly highly recommend and will use him in the future."</p>
+                    <span class="review-date">8/31/2024</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <h3>David Godlewski</h3>
+                    <p>"Pressure Pros did a fantastic job, reasonable price, easy to deal with, and went above a beyond what we talked about. Donnie has good common sense, works hard and completes the job quickly. I would recommend Pressure Pros, Donnie Niblett."</p>
+                    <span class="review-date">9/17/2024</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <h3>Carlos Trejo</h3>
+                    <p>"Great service, price and very professional, perform a great job. I had my house power wash and gutters clean, great job. Highly recommend their service."</p>
+                    <span class="review-date">9/6/2024</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <h3>Janet Kunert</h3>
+                    <p>"I had an excellent result! There were years of dirt on my brick house & paint! All gone! Woohoo!"</p>
+                    <span class="review-date">9/20/2024</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="barn-cta">
+            <div class="container text-center">
+                <h2>Leave us a review</h2>
+                <p>We would love to hear about how we did.</p>
+                <a href="https://www.google.com/maps/place/Pressure+Pros+Pressure+Washing+LLC/@45.0968129,-92.4992429,284363m/data=!3m2!1e3!4b1!4m6!3m5!1s0x29af692a9e83ab23:0x71c2d2884299e2b5!8m2!3d45.09774!4d-91.8399439!16s%2Fg%2F11w9zt2j6s?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D" class="btn-primary">WRITE A REVIEW <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/images/logo.webp" alt="Pressure Pros Logo" class="footer-logo">
+                <div class="social-icons">
+                    <a href="https://www.google.com/maps/place/Pressure+Pros+Pressure+Washing+LLC/@45.0968129,-92.4992429,284363m/data=!3m2!1e3!4b1!4m6!3m5!1s0x29af692a9e83ab23:0x71c2d2884299e2b5!8m2!3d45.09774!4d-91.8399439!16s%2Fg%2F11w9zt2j6s?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="services.html">SERVICES</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="reviews.html">REVIEWS</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+            <div class="footer-contact">
+                <h3>CONTACT</h3>
+                <p><i class="fas fa-map-marker"></i> Eau Claire, WI 54703</p>
+                <p><i class="fas fa-envelope"></i> niblettdo@icloud.com</p>
+                <p><i class="fas fa-phone"></i> (715) 944-5820</p>
+                <p>© 2026 Pressure Pros Pressure Washing LLC. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Read More Toggle for Steven's Review
+        function toggleReview() {
+            const moreText = document.getElementById("more-content");
+            const btnText = document.getElementById("read-more-btn");
+
+            if (moreText.style.display === "none") {
+                moreText.style.display = "inline";
+                btnText.innerHTML = "Read Less";
+            } else {
+                moreText.style.display = "none";
+                btnText.innerHTML = "Read More";
+            }
+        }
+
+        // Form AJAX
+        const form = document.getElementById("contact-form");
+        const formBox = document.querySelector(".hero-form-box");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const data = new FormData(e.target);
+            fetch(e.target.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+            .then(res => {
+                if (res.ok) {
+                    formBox.innerHTML = `<div class="text-center" style="padding: 40px 0;"><i class="fas fa-check-circle" style="font-size: 50px; color: var(--brand-red); margin-bottom: 20px;"></i><h3>Message Sent!</h3><p>We'll get back to you soon. Thanks!</p></div>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
