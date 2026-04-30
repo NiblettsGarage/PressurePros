@@ -132,15 +132,6 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
     z-index: -1;
 }
 
-/* Center bottom row in 3-column grid */
-.service-card.centered-card:nth-child(13) {
-    grid-column: 1 / 2;
-    margin-left: 50%;
-}
-.service-card.centered-card:nth-child(14) {
-    grid-column: 2 / 3;
-    margin-left: 50%;
-}
 
 @media (max-width: 960px) {
     .service-card.centered-card { grid-column: auto; margin-left: 0; }
@@ -159,9 +150,19 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 .service-card {
     background: #f9f9f9;
     padding: 40px;
-    border-bottom: 5px solid #eee;
+    width: calc(33.333% - 20px); /* 3 per row on desktop */
+    min-width: 300px;
     transition: all 0.3s ease;
     text-align: center;
+    border-bottom: 5px solid #eee;
+}
+
+.services-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This automatically centers leftover cards */
+    gap: 30px;
+    padding: 80px 0;
 }
 
 .service-card:hover {
@@ -205,10 +206,14 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 }
 
 @media (max-width: 960px) {
-    .service-card:nth-child(13), 
-    .service-card:nth-child(14) {
-        grid-column: auto;
-        margin-left: 0;
+    .service-card {
+        width: calc(50% - 15px); /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 650px) {
+    .service-card {
+        width: 100%; /* Full width on mobile */
     }
 }
 
