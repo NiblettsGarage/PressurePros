@@ -106,6 +106,76 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 .footer-contact h3 { color: var(--brand-red); margin-bottom: 15px; border-bottom: 4px solid var(--brand-red); display: inline-block; }
 .footer-contact i { color: var(--brand-red); margin-right: 10px; }
 
+/* Services Page Specifics */
+.services-hero {
+    padding: 160px 0 180px 0;
+}
+
+.services-hero::before {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/barn-bg.jpg'); /* Reuse barn image for consistency */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.services-main {
+    padding: 80px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: #f9f9f9;
+    padding: 40px;
+    border-bottom: 5px solid #eee;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    background: var(--white);
+    border-bottom: 5px solid var(--brand-red);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: var(--brand-red);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: var(--text-dark);
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Mobile Horizontal Scroll Hack */
+@media (max-width: 768px) {
+    .services-grid {
+        display: flex;
+        overflow-x: auto; /* Side-scrolling menu on mobile */
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+    
+    .service-card {
+        min-width: 85%; /* Shows most of one card and a peak of the next */
+        scroll-snap-align: center;
+    }
+}
+
 @media (max-width: 960px) {
     .areas-grid, .hero-grid, .footer-grid { grid-template-columns: 1fr; }
     nav, .header-cta { display: none; }
