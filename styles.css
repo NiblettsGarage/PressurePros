@@ -189,6 +189,13 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
     color: #666;
 }
 
+/* Why Choose Us Responsive Fix */
+@media (max-width: 960px) {
+    .why-choose {
+        flex-direction: column !important;
+    }
+}
+
 /* Mobile Horizontal Scroll Hack */
 @media (max-width: 768px) {
     .services-grid {
