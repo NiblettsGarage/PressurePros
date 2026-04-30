@@ -206,6 +206,26 @@
   }
 
   form.addEventListener("submit", handleSubmit)
+
+        const navToggle = document.querySelector(".mobile-nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    
+    // Toggle the icon between Bars and X
+    const icon = navToggle.querySelector("i");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        navToggle.querySelector("i").classList.replace("fa-times", "fa-bars");
+    });
+});
 </script>
 </body>
 </html>
