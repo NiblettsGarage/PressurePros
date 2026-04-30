@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Pressure Pros Pressure Washing LLC</title>
+    <link rel="icon" type="image/webp" href="assets/images/logo.webp">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -28,84 +29,51 @@
     </header>
 
     <main>
-        <section class="hero page-header">
-            <div class="container text-center">
-                <h1>OUR SERVICES</h1>
-                <p>Professional Grade Cleaning for Residential, Commercial, and Industrial Needs.</p>
+        <section class="hero services-hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1>PROFESSIONAL<br>PRESSURE WASHING &<br>CLEANING SERVICES</h1>
+                    <p>We offer a full range of residential, commercial, barns, and industrial cleaning services—tailored to your needs.</p>
+                    <div class="hero-btns">
+                        <a href="tel:7159445820" class="btn-secondary"><i class="fas fa-phone"></i> (715) 944-5820</a>
+                        <a href="contact.html" class="btn-outline">CONTACT US</a>
+                    </div>
+                </div>
+                <div class="hero-form-box">
+                    <h3>CONTACT US</h3>
+                    <form id="contact-form" action="https://formspree.io/f/xnjwqjve" method="POST">
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" name="phone" placeholder="Phone">
+                            <input type="text" name="subject" placeholder="Subject">
+                        </div>
+                        <textarea name="message" placeholder="Any additional info..." rows="4" required></textarea>
+                        <button type="submit">SUBMIT <i class="fas fa-chevron-right"></i></button>
+                    </form>
+                </div>
             </div>
         </section>
 
         <section class="services-main container">
             <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-building"></i>
-                    <h3>Commercial Pressure Washing</h3>
-                    <p>Thorough and efficient cleaning for commercial buildings, sidewalks, and storefronts.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-home"></i>
-                    <h3>Residential Pressure Washing</h3>
-                    <p>Safe and effective pressure washing for siding, fences, patios, and more.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-soap"></i>
-                    <h3>House Washing</h3>
-                    <p>Gentle yet powerful cleaning to remove dirt and stains from your home’s exterior.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-faucet-drip"></i>
-                    <h3>General Pressure Washing</h3>
-                    <p>High-pressure cleaning for concrete, brick, and wood—removing grime and mold.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-fire-alt"></i>
-                    <h3>Hot Water/Steam Cleaning</h3>
-                    <p>Deep cleaning using hot water and steam to cut through grease and tough buildup.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-house-flood-water"></i>
-                    <h3>Gutter Cleaning</h3>
-                    <p>Clear out leaves and debris to prevent blockages and water damage.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-truck-front"></i>
-                    <h3>Truck Washing</h3>
-                    <p>Professional washing for trucks and trailers to maintain cleanliness.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-house-chimney-window"></i> <h3>Roof Washing</h3>
-                    <p>Safe and effective cleaning to remove moss, algae, and stains from your roof.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-road"></i>
-                    <h3>Pavement Washing</h3>
-                    <p>Refresh sidewalks and walkways with deep pressure cleaning.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-car-side"></i>
-                    <h3>Driveway Cleaning</h3>
-                    <p>Remove oil stains and tire marks from driveways to boost curb appeal.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-palette"></i>
-                    <h3>Pre-Paint Washing</h3>
-                    <p>Prepare surfaces for painting to ensure proper paint adhesion.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-truck-moving"></i>
-                    <h3>Fleet Washing</h3>
-                    <p>Keep company vehicles sharp with scheduled cleaning that removes grease.</p>
-                </div>
-                <div class="service-card centered-card">
-                    <i class="fas fa-tractor"></i>
-                    <h3>Excavation Equipment</h3>
-                    <p>Heavy-duty washing for construction equipment—removing mud and debris.</p>
-                </div>
-                <div class="service-card centered-card">
-                    <i class="fas fa-hammer"></i>
-                    <h3>Deck Cleaning</h3>
-                    <p>Restore the natural look of your deck by removing grime and weather stains.</p>
-                </div>
+                <div class="service-card"><i class="fas fa-building"></i><h3>Commercial Pressure Washing</h3><p>Thorough and efficient cleaning for commercial buildings, sidewalks, and storefronts.</p></div>
+                <div class="service-card"><i class="fas fa-home"></i><h3>Residential Pressure Washing</h3><p>Safe and effective pressure washing for siding, fences, patios, and more.</p></div>
+                <div class="service-card"><i class="fas fa-soap"></i><h3>House Washing</h3><p>Gentle yet powerful cleaning to remove dirt and stains from your home’s exterior.</p></div>
+                <div class="service-card"><i class="fas fa-faucet-drip"></i><h3>General Pressure Washing</h3><p>High-pressure cleaning for concrete, brick, and wood—removing grime and mold.</p></div>
+                <div class="service-card"><i class="fas fa-fire-alt"></i><h3>Hot Water/Steam Cleaning</h3><p>Deep cleaning using hot water and steam to cut through grease and tough buildup.</p></div>
+                <div class="service-card"><i class="fas fa-house-flood-water"></i><h3>Gutter Cleaning</h3><p>Clear out leaves and debris to prevent blockages and water damage.</p></div>
+                <div class="service-card"><i class="fas fa-truck-front"></i><h3>Truck Washing</h3><p>Professional washing for trucks and trailers to maintain cleanliness.</p></div>
+                <div class="service-card"><i class="fas fa-house-chimney-window"></i><h3>Roof Washing</h3><p>Safe and effective cleaning to remove moss, algae, and stains from your roof.</p></div>
+                <div class="service-card"><i class="fas fa-road"></i><h3>Pavement Washing</h3><p>Refresh sidewalks and walkways with deep pressure cleaning.</p></div>
+                <div class="service-card"><i class="fas fa-car-side"></i><h3>Driveway Cleaning</h3><p>Remove oil stains and tire marks from driveways to boost curb appeal.</p></div>
+                <div class="service-card"><i class="fas fa-palette"></i><h3>Pre-Paint Washing</h3><p>Prepare surfaces for painting to ensure proper paint adhesion.</p></div>
+                <div class="service-card"><i class="fas fa-truck-moving"></i><h3>Fleet Washing</h3><p>Keep company vehicles sharp with scheduled cleaning that removes grease.</p></div>
+                
+                <div class="service-card centered-card"><i class="fas fa-tractor"></i><h3>Excavation Equipment</h3><p>Heavy-duty washing for construction equipment—removing mud and debris.</p></div>
+                <div class="service-card centered-card"><i class="fas fa-hammer"></i><h3>Deck Cleaning</h3><p>Restore the natural look of your deck by removing grime and weather stains.</p></div>
             </div>
         </section>
 
@@ -142,5 +110,20 @@
             </div>
         </div>
     </footer>
+
+    <script>
+      const form = document.getElementById("contact-form");
+      const formBox = document.querySelector(".hero-form-box");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        fetch(e.target.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(res => {
+          if (res.ok) {
+            formBox.innerHTML = `<div class="text-center" style="padding: 40px 0;"><i class="fas fa-check-circle" style="font-size: 50px; color: var(--brand-red); margin-bottom: 20px;"></i><h3>Message Sent!</h3><p>We'll get back to you soon. Thanks!</p></div>`;
+          } else { alert("Oops! Problem submitting form."); }
+        });
+      });
+    </script>
 </body>
 </html>
