@@ -11,23 +11,29 @@
 </head>
 <body>
     <header>
-        <div class="container nav-container">
-            <img src="assets/images/logo.webp" alt="Pressure Pros Logo" class="logo">
-            <nav>
-                <a href="index.html">HOME</a>
-                <a href="services.html">SERVICES</a>
-                <a href="about.html">ABOUT</a>
-                <a href="gallery.html">GALLERY</a>
-                <a href="reviews.html">REVIEWS</a>
-                <a href="contact.html">CONTACT</a>
-            </nav>
-            <div class="header-cta">
-                <a href="tel:7159445820" class="phone-link"><i class="fas fa-phone"></i> (715) 944-5820</a>
-                <a href="contact.html" class="btn-primary">CONTACT US <i class="fas fa-chevron-right"></i></a>
-            </div>
-        </div>
-    </header>
+    <div class="container nav-container">
+        <a href="index.html"><img src="assets/images/logo.webp" alt="Pressure Pros Logo" class="logo"></a>
+        
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
 
+        <nav id="primary-navigation" class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="about.html">ABOUT</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="reviews.html">REVIEWS</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="tel:7159445820" class="mobile-only-phone"><i class="fas fa-phone"></i> (715) 944-5820</a>
+        </nav>
+
+        <div class="header-cta">
+            <a href="tel:7159445820" class="phone-link"><i class="fas fa-phone"></i> (715) 944-5820</a>
+            <a href="contact.html" class="btn-primary">CONTACT US</a>
+        </div>
+    </div>
+</header>
     <main>
         <section class="hero gallery-hero">
             <div class="container hero-grid">
@@ -125,6 +131,25 @@
                 }
             });
         });
+        const navToggle = document.querySelector(".mobile-nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    
+    // Toggle the icon between Bars and X
+    const icon = navToggle.querySelector("i");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        navToggle.querySelector("i").classList.replace("fa-times", "fa-bars");
+    });
+});
     </script>
 </body>
 </html>
