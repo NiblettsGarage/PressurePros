@@ -45,7 +45,7 @@
                 </div>
                 <div class="hero-form-box">
                     <h3>CONTACT US</h3>
-                    <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <form id="contact-form" action="https://formspree.io/f/xnjwqjve" method="POST">
                         <div class="form-row">
                             <input type="text" name="name" placeholder="Name" required>
                             <input type="email" name="email" placeholder="Email" required>
@@ -54,7 +54,10 @@
                             <input type="tel" name="phone" placeholder="Phone">
                             <input type="text" name="subject" placeholder="Subject">
                         </div>
-                        <textarea name="message" placeholder="Any additional info..." rows="4"></textarea>
+                        <textarea name="message" placeholder="Message..." rows="4" required></textarea>
+                        
+                        <input type="hidden" name="_subject" value="New Lead: Pressure Pros LLC Website">
+                        
                         <button type="submit">SUBMIT <i class="fas fa-chevron-right"></i></button>
                     </form>
                 </div>
@@ -153,5 +156,46 @@
             </div>
         </div>
     </footer>
+    <script>
+  const form = document.getElementById("contact-form");
+  const formBox = document.querySelector(".hero-form-box");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    
+    // Send the data to Formspree
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // This is the HTML that replaces the form on success
+        formBox.innerHTML = `
+            <div class="text-center" style="padding: 40px 0;">
+                <i class="fas fa-check-circle" style="font-size: 50px; color: var(--brand-red); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--text-dark);">Message Sent!</h3>
+                <p style="color: var(--text-dark); margin-top: 10px;">We'll get back to you as soon as we can. Thanks for reaching out!</p>
+            </div>
+        `;
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            alert(data["errors"].map(error => error["message"]).join(", "));
+          } else {
+            alert("Oops! There was a problem submitting your form");
+          }
+        })
+      }
+    }).catch(error => {
+      alert("Oops! There was a problem connecting to the server");
+    });
+  }
+
+  form.addEventListener("submit", handleSubmit)
+</script>
 </body>
 </html>
