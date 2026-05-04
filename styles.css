@@ -403,28 +403,80 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
         margin-top: 20px !important;
     }
 
-    .trust-bar {
-    background: var(--brand-red);
-    color: white;
-    padding: 20px 0;
-    z-index: 15;
+/* --- Trust Cards Section --- */
+.trust-section {
+    padding: 60px 0;
+    background: var(--white);
     position: relative;
+    z-index: 20; /* Ensure it stays above slants */
 }
-.trust-grid {
+
+.trust-cards-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
+}
+
+.trust-card {
+    background: var(--white);
+    padding: 30px 20px;
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    text-align: center;
+    border-radius: 8px;
+    /* Brand Red Shadow - adjusted for a clean look */
+    box-shadow: 0 10px 20px rgba(184, 48, 26, 0.15); 
+    transition: all 0.3s ease-in-out;
+    border-top: 4px solid var(--brand-red);
+}
+
+/* The "Jump Up" Effect */
+.trust-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(184, 48, 26, 0.3);
+}
+
+.trust-card i {
+    font-size: 32px;
+    color: var(--brand-red);
+    margin-bottom: 15px;
+}
+
+.trust-card h4 {
     font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.trust-card p {
+    font-size: 13px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 1px;
 }
-.trust-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-}
+
+/* Mobile Responsive - 2x2 Grid */
 @media (max-width: 768px) {
-    .trust-grid { justify-content: center; }
+    .trust-cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .trust-card {
+        min-width: unset;
+        max-width: 100%;
+        padding: 20px 10px;
+    }
 }
+
+@media (max-width: 480px) {
+    /* If the screen is tiny, stack them back to 1 column */
+    .trust-cards-container {
+        grid-template-columns: 1fr;
+    }
 }
