@@ -405,78 +405,77 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
 
 /* --- Trust Cards Section --- */
 .trust-section {
-    padding: 60px 0;
+    padding: 80px 0;
     background: var(--white);
     position: relative;
-    z-index: 20; /* Ensure it stays above slants */
+    z-index: 30; /* High z-index so it sits ABOVE the hero slant */
 }
 
 .trust-cards-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .trust-card {
     background: var(--white);
-    padding: 30px 20px;
+    padding: 40px 20px;
     flex: 1;
-    min-width: 220px;
+    min-width: 250px;
     max-width: 280px;
     text-align: center;
-    border-radius: 8px;
-    /* Brand Red Shadow - adjusted for a clean look */
-    box-shadow: 0 10px 20px rgba(184, 48, 26, 0.15); 
-    transition: all 0.3s ease-in-out;
-    border-top: 4px solid var(--brand-red);
+    border: 3px solid var(--text-dark); /* Bold border for that solid look */
+    
+    /* SOLID SHADOW: Horizontal, Vertical, Blur(0), Spread(0), Color */
+    box-shadow: 8px 8px 0px var(--brand-red); 
+    
+    transition: all 0.2s ease-in-out;
+    cursor: default;
 }
 
 /* The "Jump Up" Effect */
 .trust-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 30px rgba(184, 48, 26, 0.3);
+    /* Moves the card up and left while the shadow stays or grows */
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px var(--brand-red);
 }
 
 .trust-card i {
-    font-size: 32px;
+    font-size: 45px; /* Bigger icons based on your screenshot */
     color: var(--brand-red);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .trust-card h4 {
     font-family: 'Anton', sans-serif;
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 24px;
+    margin-bottom: 10px;
     color: var(--text-dark);
+    line-height: 1;
 }
 
 .trust-card p {
-    font-size: 13px;
-    color: #666;
+    font-size: 14px;
+    color: #444;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1px;
 }
 
-/* Mobile Responsive - 2x2 Grid */
+/* Mobile: 2x2 Grid with hard shadows */
 @media (max-width: 768px) {
     .trust-cards-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 15px;
+        gap: 20px;
+        padding: 0 10px;
     }
     
     .trust-card {
         min-width: unset;
         max-width: 100%;
-        padding: 20px 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* If the screen is tiny, stack them back to 1 column */
-    .trust-cards-container {
-        grid-template-columns: 1fr;
+        padding: 30px 10px;
     }
 }
