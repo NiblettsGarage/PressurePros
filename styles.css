@@ -189,6 +189,64 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
     color: #666;
 }
 
+/* --- Trust Cards Section --- */
+.trust-section {
+    position: relative;
+    display: block !important; /* Force it to exist */
+    width: 100%;
+    padding: 100px 0;
+    background-color: #ffffff;
+    z-index: 50; /* Crank this up to stay above all slants */
+}
+
+.trust-cards-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.trust-card {
+    background: #ffffff;
+    padding: 40px 20px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px;
+    text-align: center;
+    border: 3px solid #212121; /* Solid dark border */
+    box-shadow: 8px 8px 0px #b8301a; /* Hard brand-red shadow */
+    transition: all 0.2s ease-in-out;
+}
+
+.trust-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 13px 13px 0px #b8301a;
+}
+
+.trust-card i {
+    font-size: 50px;
+    color: #b8301a;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.trust-card h4 {
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #212121;
+}
+
+.trust-card p {
+    font-size: 14px;
+    font-weight: 800;
+    color: #444;
+    text-transform: uppercase;
+}
+
 /* Why Choose Us Responsive Fix */
 @media (max-width: 960px) {
     .why-choose {
@@ -403,79 +461,3 @@ input, textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px s
         margin-top: 20px !important;
     }
 
-/* --- Trust Cards Section --- */
-.trust-section {
-    padding: 80px 0;
-    background: var(--white);
-    position: relative;
-    z-index: 30; /* High z-index so it sits ABOVE the hero slant */
-}
-
-.trust-cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.trust-card {
-    background: var(--white);
-    padding: 40px 20px;
-    flex: 1;
-    min-width: 250px;
-    max-width: 280px;
-    text-align: center;
-    border: 3px solid var(--text-dark); /* Bold border for that solid look */
-    
-    /* SOLID SHADOW: Horizontal, Vertical, Blur(0), Spread(0), Color */
-    box-shadow: 8px 8px 0px var(--brand-red); 
-    
-    transition: all 0.2s ease-in-out;
-    cursor: default;
-}
-
-/* The "Jump Up" Effect */
-.trust-card:hover {
-    /* Moves the card up and left while the shadow stays or grows */
-    transform: translate(-4px, -4px);
-    box-shadow: 12px 12px 0px var(--brand-red);
-}
-
-.trust-card i {
-    font-size: 45px; /* Bigger icons based on your screenshot */
-    color: var(--brand-red);
-    margin-bottom: 20px;
-    display: block;
-}
-
-.trust-card h4 {
-    font-family: 'Anton', sans-serif;
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: var(--text-dark);
-    line-height: 1;
-}
-
-.trust-card p {
-    font-size: 14px;
-    color: #444;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-/* Mobile: 2x2 Grid with hard shadows */
-@media (max-width: 768px) {
-    .trust-cards-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding: 0 10px;
-    }
-    
-    .trust-card {
-        min-width: unset;
-        max-width: 100%;
-        padding: 30px 10px;
-    }
-}
