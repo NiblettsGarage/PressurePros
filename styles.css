@@ -10,6 +10,7 @@
 body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
 h1, h2, h3, h4 { font-family: 'Anton', sans-serif; text-transform: uppercase; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.review-container { max-width: 1200px; margin: 0 auto; padding: 30 20px; }
 .text-center { text-align: center; }
 
 /* --- 2. HEADER --- */
